@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroTrack - Gestione Componenti Elettronici</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1>ElectroTrack</h1>
+        <p class="lead">Gestisci i tuoi componenti elettronici in modo semplice ed efficiente - by Mario Scioli</p>
+    </header>
+
+    <div class="container my-5">
+        <div class="text-center mb-4">
+            <button id="addBtn" class="btn btn-success">Aggiungi Componente</button>
+            <button id="searchBtn" class="btn btn-primary">Cerca Componente</button>
+            <button id="printBtn" class="btn btn-secondary">Stampa Lista</button>
+            <button id="exportBtn" class="btn btn-info">Esporta</button>
+            <input type="file" id="importFile" style="display: none;" accept=".json">
+            <button id="importBtn" class="btn btn-warning">Importa</button>
+        </div>
+        <table id="componentTable" class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantità</th>
+                    <th>Posizione</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h3 class="mt-5">Componenti a Zero Stock</h3>
+        <table id="zeroStockTable" class="table table-danger table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantità</th>
+                    <th>Posizione</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 ElectroTrack. Tutti i diritti riservati. Software di proprietà di Mario Scioli</p>
+    </footer>
+
+    <div class="modal fade" id="componentModal" tabindex="-1" aria-labelledby="componentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="componentModalLabel">Aggiungi/Modifica Componente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="componentForm">
+                        <div class="mb-3">
+                            <label for="componentName" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="componentName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="componentQuantity" class="form-label">Quantità</label>
+                            <input type="number" class="form-control" id="componentQuantity" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="componentLocation" class="form-label">Posizione</label>
+                            <input type="text" class="form-control" id="componentLocation" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary" id="saveComponentBtn">Salva</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
