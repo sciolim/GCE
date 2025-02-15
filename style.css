@@ -1,0 +1,14 @@
+/* Stile per la tabella dei componenti a zero stock */
+#zeroStockTable {
+    margin-top: 20px;
+    background-color: #ffcccc; /* Sfondo rosso chiaro */
+}
+
+#zeroStockTable th {
+    background-color: #dc3545; /* Colore di intestazione rosso */
+    color: white;
+}
+
+#zeroStockTable tbody tr:hover {
+    background-color: #ffb3b3; /* Sfondo rosso più scuro al passaggio del mouse */
+}
